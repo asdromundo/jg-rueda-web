@@ -1,24 +1,21 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+import { ref } from 'vue';
 
-let toggleDrawer = false;
+let data = ref({
+  drawer: false,
+})
 </script>
 
 <template>
   <v-card>
-    <v-layout>
+    <v-layout class="rounded rounded-md">
       <v-app-bar
         color="teal-darken-4"
-        image="https://picsum.photos/1920/1080?random"
+        permanent
       >
-        <template v-slot:image>
-          <v-img
-            gradient="to top right, rgba(19,84,122,.8), rgba(128,208,199,.8)"
-          ></v-img>
-        </template>
-
         <template v-slot:prepend>
-          <v-app-bar-nav-icon @click.stop="toggleDrawer = !toggleDrawer"></v-app-bar-nav-icon>
+          <v-app-bar-nav-icon @click.stop="data.drawer = !data.drawer"></v-app-bar-nav-icon>
         </template>
 
         <v-app-bar-title>Juan Gustavo Rueda Escobedo</v-app-bar-title>
@@ -31,7 +28,8 @@ let toggleDrawer = false;
         <v-btn to="/contact" variant="text" class="text-none text-subtitle-1">Contact</v-btn>
       </v-app-bar>
 
-      <v-navigation-drawer>
+      <v-navigation-drawer
+      v-model="data.drawer">
         <v-list-item title="Site" subtitle="Navegation"></v-list-item>
         <v-divider></v-divider>
         <v-list-item to="/" title="Home"></v-list-item>
@@ -40,8 +38,11 @@ let toggleDrawer = false;
         <v-list-item to="/contact" title="Contact"></v-list-item>
       </v-navigation-drawer>
 
-      <v-main>
-          <RouterView />
+      <v-main
+      class="rounded rounded-md"
+      style="min-height: 300px;"
+      >
+        <RouterView />
       </v-main>
     </v-layout>
   </v-card>
