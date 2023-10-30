@@ -4,6 +4,8 @@ import { ref } from 'vue';
 
 let data = ref({
   drawer: false,
+  showButton: false,
+  drawerButtonShape: "rounded"
 })
 </script>
 
@@ -14,18 +16,23 @@ let data = ref({
         color="teal-darken-4"
         permanent
       >
-        <template v-slot:prepend>
-          <v-app-bar-nav-icon @click.stop="data.drawer = !data.drawer"></v-app-bar-nav-icon>
+        <template v-slot:prepend >
+          <v-app-bar-nav-icon
+          :class="data.drawerButtonShape"
+          @click.stop="data.drawer = !data.drawer"
+          class="d-md-none"
+          />
         </template>
 
         <v-app-bar-title>Juan Gustavo Rueda Escobedo</v-app-bar-title>
 
-        <v-spacer></v-spacer>
+        <div class="d-none d-md-block">
+          <v-btn to="/" variant="text" class="text-none text-subtitle-1">Home</v-btn>
+          <v-btn to="/publications" variant="text" class="text-none text-subtitle-1">Publications</v-btn>
+          <v-btn to="/about" variant="text" class="text-none text-subtitle-1">About</v-btn>
+          <v-btn to="/contact" variant="text" class="text-none text-subtitle-1">Contact</v-btn>
+        </div>
 
-        <v-btn to="/" variant="text" class="text-none text-subtitle-1">Home</v-btn>
-        <v-btn to="/publications" variant="text" class="text-none text-subtitle-1">Publications</v-btn>
-        <v-btn to="/about" variant="text" class="text-none text-subtitle-1">About</v-btn>
-        <v-btn to="/contact" variant="text" class="text-none text-subtitle-1">Contact</v-btn>
       </v-app-bar>
 
       <v-navigation-drawer
