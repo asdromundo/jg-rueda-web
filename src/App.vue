@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 
-
+let toggleDrawer = false;
 </script>
 
 <template>
@@ -18,7 +18,7 @@ import { RouterView } from 'vue-router'
         </template>
 
         <template v-slot:prepend>
-          <v-app-bar-nav-icon></v-app-bar-nav-icon>
+          <v-app-bar-nav-icon @click.stop="toggleDrawer = !toggleDrawer"></v-app-bar-nav-icon>
         </template>
 
         <v-app-bar-title>Juan Gustavo Rueda Escobedo</v-app-bar-title>
