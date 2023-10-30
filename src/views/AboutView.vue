@@ -2,6 +2,7 @@
   <div class="about">
     <h1>This is an about page</h1>
   </div>
+  <v-btn>Haz clic aquí</v-btn>
 </template>
 
 <style>
