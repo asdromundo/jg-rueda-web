@@ -11,34 +11,33 @@ function toggleTheme() {
 
 let data = ref({
   drawer: false,
-  showButton: false,
-  drawerButtonShape: 'rounded'
 })
 </script>
 
 <template>
-  <v-app ref="app" class="rounded rounded-md ">
-    <v-app-bar color="surface" permanent>
+  <v-app app theme="theme">
+    <v-app-bar :elevation="8">
       <template v-slot:prepend>
         <v-app-bar-nav-icon
-          :class="data.drawerButtonShape"
           @click.stop="data.drawer = !data.drawer"
           class="d-sm-none"
+          rounded="lg"
         />
       </template>
 
       <v-app-bar-title>Juan Gustavo Rueda Escobedo</v-app-bar-title>
 
-      <div class="d-none d-sm-block text-blue-darken-3">
-        <v-btn to="/" variant="text" class="text-none text-subtitle-1 mr-1">Home</v-btn>
-        <v-btn to="/publications" variant="text" class="text-none text-subtitle-1 mr-1">Publications</v-btn>
-        <v-btn to="/about" variant="text" class="text-none text-subtitle-1 mr-1">About</v-btn>
-        <v-btn to="/contact" variant="text" class="text-none text-subtitle-1 mr-1">Contact</v-btn>
-        <v-btn icon="mdi-theme-light-dark" @click="toggleTheme"></v-btn>
+      <div class="d-none d-sm-flex text-primary">
+        <v-btn to="/" variant="text" class="text-none text-subtitle-1">Home</v-btn>
+        <v-btn to="/publications" variant="text" class="text-none text-subtitle-1">Publications</v-btn>
+        <v-btn to="/about" variant="text" class="text-none text-subtitle-1">About</v-btn>
+        <v-btn to="/contact" variant="text" class="text-none text-subtitle-1">Contact</v-btn>
       </div>
+      <v-btn icon="mdi-theme-light-dark" @click="toggleTheme" size="small"></v-btn>
+     
     </v-app-bar>
 
-    <v-navigation-drawer v-model="data.drawer">
+    <v-navigation-drawer v-model="data.drawer" class="d-sm-none" temporary>
       <v-list-item title="Site" subtitle="Navegation"></v-list-item>
       <v-divider></v-divider>
       <v-list-item to="/" title="Home"></v-list-item>
@@ -47,14 +46,25 @@ let data = ref({
       <v-list-item to="/contact" title="Contact"></v-list-item>
     </v-navigation-drawer>
 
-    <v-main class="d-flex align-center justify-center" style="min-height: 200px">
-      <RouterView />
+    <v-main class="align-center justify-center main">
+      <v-container class="max-width">
+        <RouterView />
+      </v-container>
     </v-main>
 
     <v-footer>
-      <v-btn class="mr-auto" variant="text"> Get data </v-btn>
+      <v-btn class="mx-auto" variant="text"> Footer </v-btn>
     </v-footer>
   </v-app>
 </template>
 
+<style scoped>
+.main {
+  background: url('/texture_400x400.jpg'); /* Propiedad background para recortar y centrar la imagen */
+  background-repeat: repeat;
+}
 
+.max-width {
+  max-width: 1440px;
+}
+</style>

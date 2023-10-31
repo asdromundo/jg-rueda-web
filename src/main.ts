@@ -10,7 +10,7 @@ import * as directives from 'vuetify/directives'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import '@mdi/font/css/materialdesignicons.css'
 //Material Design 3
-
+import { md3 } from 'vuetify/blueprints'
 
 const lightTheme: ThemeDefinition = {
   dark: false,
@@ -87,7 +87,8 @@ const vuetify = createVuetify({
       lightTheme,
       darkTheme,
     }
-  }
+  },
+  blueprint: md3,
 })
 
 const app = createApp(App)
