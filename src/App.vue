@@ -6,11 +6,11 @@ import { useTheme } from 'vuetify'
 const theme = useTheme()
 
 function toggleTheme() {
-  theme.global.name.value = theme.global.current.value.dark ? 'lightTheme' : 'darkTheme';
+  theme.global.name.value = theme.global.current.value.dark ? 'lightTheme' : 'darkTheme'
 }
 
 let data = ref({
-  drawer: false,
+  drawer: false
 })
 </script>
 
@@ -29,12 +29,13 @@ let data = ref({
 
       <div class="d-none d-sm-flex text-primary">
         <v-btn to="/" variant="text" class="text-none text-subtitle-1">Home</v-btn>
-        <v-btn to="/publications" variant="text" class="text-none text-subtitle-1">Publications</v-btn>
+        <v-btn to="/publications" variant="text" class="text-none text-subtitle-1"
+          >Publications</v-btn
+        >
         <v-btn to="/about" variant="text" class="text-none text-subtitle-1">About</v-btn>
         <v-btn to="/contact" variant="text" class="text-none text-subtitle-1">Contact</v-btn>
       </div>
       <v-btn icon="mdi-theme-light-dark" @click="toggleTheme" size="small"></v-btn>
-     
     </v-app-bar>
 
     <v-navigation-drawer v-model="data.drawer" class="d-sm-none" temporary>
@@ -54,7 +55,7 @@ let data = ref({
 
     <v-footer class="">
       <v-card></v-card>
-      <v-btn class="mx-auto " variant="text"> Footer </v-btn>
+      <v-btn class="mx-auto" variant="text"> Footer </v-btn>
     </v-footer>
   </v-app>
 </template>
