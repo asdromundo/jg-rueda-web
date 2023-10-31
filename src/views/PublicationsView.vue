@@ -1,3 +1,3 @@
 <template>
-    <h1>Research</h1>
+  <h1>Research</h1>
 </template>

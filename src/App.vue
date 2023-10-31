@@ -6,7 +6,7 @@ import { useTheme } from 'vuetify'
 const theme = useTheme()
 
 function toggleTheme() {
-  theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark';
+  theme.global.name.value = theme.global.current.value.dark ? 'lightTheme' : 'darkTheme';
 }
 
 let data = ref({
@@ -17,8 +17,8 @@ let data = ref({
 </script>
 
 <template>
-  <v-app ref="app" class="rounded rounded-md bg-surface-variant">
-    <v-app-bar color="" permanent>
+  <v-app ref="app" class="rounded rounded-md ">
+    <v-app-bar color="surface" permanent>
       <template v-slot:prepend>
         <v-app-bar-nav-icon
           :class="data.drawerButtonShape"
@@ -47,7 +47,7 @@ let data = ref({
       <v-list-item to="/contact" title="Contact"></v-list-item>
     </v-navigation-drawer>
 
-    <v-main class="d-flex align-center justify-center" style="min-height: 300px">
+    <v-main class="d-flex align-center justify-center" style="min-height: 200px">
       <RouterView />
     </v-main>
 
