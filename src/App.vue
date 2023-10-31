@@ -46,14 +46,15 @@ let data = ref({
       <v-list-item to="/contact" title="Contact"></v-list-item>
     </v-navigation-drawer>
 
-    <v-main class="align-center justify-center main">
+    <v-main class="align-center justify-center h-100 main">
       <v-container class="max-width">
         <RouterView />
       </v-container>
     </v-main>
 
-    <v-footer>
-      <v-btn class="mx-auto" variant="text"> Footer </v-btn>
+    <v-footer class="">
+      <v-card></v-card>
+      <v-btn class="mx-auto " variant="text"> Footer </v-btn>
     </v-footer>
   </v-app>
 </template>
