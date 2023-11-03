@@ -25,15 +25,15 @@ let data = ref({
         />
       </template>
 
-      <v-app-bar-title>Juan Gustavo Rueda Escobedo</v-app-bar-title>
+      <v-app-bar-title class="font-weight-black text-primary">Juan Gustavo Rueda Escobedo</v-app-bar-title>
 
       <div class="d-none d-sm-flex text-primary">
-        <v-btn to="/" variant="text" class="text-none text-subtitle-1">Home</v-btn>
-        <v-btn to="/publications" variant="text" class="text-none text-subtitle-1"
+        <v-btn to="/" variant="text" class="text-none text-subtitle-1 font-weight-bold">Home</v-btn>
+        <v-btn to="/publications" variant="text" class="text-none text-subtitle-1 font-weight-bold"
           >Publications</v-btn
         >
-        <v-btn to="/about" variant="text" class="text-none text-subtitle-1">About</v-btn>
-        <v-btn to="/contact" variant="text" class="text-none text-subtitle-1">Contact</v-btn>
+        <v-btn to="/about" variant="text" class="text-none text-subtitle-1 font-weight-bold">About</v-btn>
+        <v-btn to="/contact" variant="text" class="text-none text-subtitle-1 font-weight-bold">Contact</v-btn>
       </div>
       <v-btn icon="mdi-theme-light-dark" @click="toggleTheme" size="small"></v-btn>
     </v-app-bar>
