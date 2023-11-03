@@ -1,44 +1,49 @@
 <script setup lang="ts">
 import { VCol } from 'vuetify/components'
+import { useTheme } from 'vuetify'
+
+const theme = useTheme()
 </script>
 
 <template>
   <v-col class="pa-0">
     <v-card class="w-100">
-      <v-img src="/banner_long.jpg">
+      <v-img src="/banner_long.jpg" :style="{ filter: theme.global.current.value.dark ? 'brightness(50%)' : 'none' }"/>
+      <v-container class="overlay-container pa-0">
         <v-card-title 
-          class="text-primary font-weight-bold text-h6 text-md-h3 mx-10 mt-10 align-center"
-          style="overflow-wrap: anywhere; white-space: normal; max-width: 35%; line-height: 3.5rem"
-          >
-          Department on Automatic Control
-        </v-card-title>
-        <v-card-subtitle
-        class="ml-10 font-weight-bold text-body-1"
-        style="overflow-wrap: anywhere; white-space: normal; max-width: 30%;"
+        class="text-primary font-weight-bold text-h6 text-md-h3 mx-10 mt-10 align-center"
+        style="overflow-wrap: anywhere; white-space: normal; max-width: 35%; line-height: 3.5rem"
         >
-          <i>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</i>
-          <p>"No hay nadie que ame el dolor mismo, que lo busque, lo encuentre y lo quiera, simplemente porque es el dolor."</p>
-        </v-card-subtitle>
-        <v-btn class="text-none font-weight-bold text-subtitle-1 ml-10 mt-4" size="x-large" color="secondary">Welcome</v-btn>
-      </v-img>
+        Department on Automatic Control
+      </v-card-title>
+      <v-card-subtitle
+      class="ml-10 font-weight-bold text-body-1"
+      style="overflow-wrap: anywhere; white-space: normal; max-width: 30%;"
+      >
+        <i>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</i>
+        <p>"No hay nadie que ame el dolor mismo, que lo busque, lo encuentre y lo quiera, simplemente porque es el dolor."</p>
+      </v-card-subtitle>
+      <v-btn class="text-none font-weight-bold text-subtitle-1 ml-12 mt-4" size="x-large" color="tertiary">Welcome</v-btn>
+   
+      </v-container>
     </v-card>
     <!-- End banner image -->
     <v-row no-gutters>
-      <v-col class="text-justify d-flex" cols="12" md="3" style="flex-direction: : column;;">
+      <v-col class="text-justify d-flex" cols="12" md="3" style="flex-direction: : column;">
         <v-card class="pa-6">
           <v-card-title class="text-h6 text-md-h4 text-primary font-weight-black">
             Home
           </v-card-title>
           <v-card-text>
             <p>"No hay nadie que ame el dolor mismo, que lo busque, lo encuentre y lo quiera, simplemente porque es el dolor."</p>
-            <v-img src="/banner.jpg" ></v-img>
+            <v-img src="/banner.jpg"></v-img>
           </v-card-text>
           <v-card-actions class="justify-center">
             <v-btn block :variant="'flat'" color="primary" class="text-none font-weight-bold" size="x-large" >Lorem ipsum dolor</v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
-      <v-col class="text-justify d-flex" cols="12" md="3" style="flex-direction: : column;;">
+      <v-col class="text-justify d-flex" cols="12" md="3" style="flex-direction: : column;">
         <v-card class="pa-6">
           <v-card-title class="text-h6 text-md-h4 text-primary font-weight-black">
             About
@@ -53,7 +58,7 @@ import { VCol } from 'vuetify/components'
           </v-card-text>
         </v-card>
       </v-col>
-      <v-col class="text-justify d-flex" cols="12" md="3" style="flex-direction: : column;;">
+      <v-col class="text-justify d-flex" cols="12" md="3" style="flex-direction: : column;">
         <v-card class="pa-6">
           <v-card-title class="text-h6 text-md-h4 text-primary font-weight-black">
             Research
@@ -72,7 +77,7 @@ import { VCol } from 'vuetify/components'
           </v-card-actions>
         </v-card>
       </v-col>
-      <v-col class="text-justify d-flex" cols="12" md="3" style="flex-direction: : column;;">
+      <v-col class="text-justify d-flex" cols="12" md="3" style="flex-direction: : column;">
         <v-card class="pa-6">
           <v-card-title class="text-h6 text-md-h4 text-primary font-weight-black">
             Contact
@@ -87,7 +92,7 @@ import { VCol } from 'vuetify/components'
             <v-btn block :variant="'flat'" class="text-none font-weight-bold" size="x-large" color="primary-container">Lorem ipsum dolor</v-btn>
           </v-card-actions>
           <v-card-actions class="justify-center">
-            <v-btn block :variant="'flat'" color="secondary" class="text-none font-weight-bold" size="x-large" >Lorem ipsum dolor</v-btn>
+            <v-btn block :variant="'flat'" color="tertiary" class="text-none font-weight-bold" size="x-large" >Lorem ipsum dolor</v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
@@ -95,3 +100,13 @@ import { VCol } from 'vuetify/components'
   </v-col>
   <!-- End cards -->
 </template>
+
+<style scoped>
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>

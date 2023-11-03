@@ -1,9 +1,14 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { RouterView } from 'vue-router'
 import { ref } from 'vue'
 import { useTheme } from 'vuetify'
 
 const theme = useTheme()
+
+const darkMode = computed(() => {
+  return theme.global.current.value.dark
+})
 
 function toggleTheme() {
   theme.global.name.value = theme.global.current.value.dark ? 'lightTheme' : 'darkTheme'
@@ -47,7 +52,7 @@ let data = ref({
       <v-list-item to="/contact" title="Contact"></v-list-item>
     </v-navigation-drawer>
 
-    <v-main class="align-center justify-center h-100 main">
+    <v-main class="align-center justify-center h-100" :class="darkMode ? 'dark-main' : 'main'">
       <v-container class="container">
         <RouterView />
       </v-container>
@@ -62,11 +67,17 @@ let data = ref({
 
 <style scoped>
 .main {
-  background: url('/texture_400x400.jpg'); /* Propiedad background para recortar y centrar la imagen */
+  background-image: url('/texture_400x400.jpg'); /* Propiedad background para recortar y centrar la imagen */
   background-repeat: repeat;
 }
 
-.main .container{
+.dark-main {
+  background-repeat: repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/texture_400x400.jpg');
+}
+
+.container{
+  background: var(--var-theme-primary);
   max-width: 1440px;
   min-width: 300px;
 }
