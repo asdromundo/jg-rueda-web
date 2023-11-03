@@ -78,7 +78,7 @@ const theme = useTheme()
     </v-card>
     <!-- End banner image -->
     <v-row no-gutters>
-      <v-col class="text-justify d-flex" cols="12" md="6" lg="3" style="flex-direction: : column;">
+      <v-col class="text-justify d-flex" cols="12" sm="6" lg="3" style="flex-direction: : column;">
         <v-card class="pa-6">
           <v-card-title class="text-h6 text-md-h4 text-primary font-weight-black">
             Home
@@ -102,7 +102,7 @@ const theme = useTheme()
           </v-card-actions>
         </v-card>
       </v-col>
-      <v-col class="text-justify d-flex" cols="12" md="6" lg="3" style="flex-direction: : column;">
+      <v-col class="text-justify d-flex" cols="12" sm="6" lg="3" style="flex-direction: : column;">
         <v-card class="pa-6">
           <v-card-title class="text-h6 text-md-h4 text-primary font-weight-black">
             About
@@ -128,7 +128,7 @@ const theme = useTheme()
           </v-card-text>
         </v-card>
       </v-col>
-      <v-col class="text-justify d-flex" cols="12" md="6" lg="3" style="flex-direction: : column;">
+      <v-col class="text-justify d-flex" cols="12" sm="6" lg="3" style="flex-direction: : column;">
         <v-card class="pa-6">
           <v-card-title class="text-h6 text-md-h4 text-primary font-weight-black">
             Research
@@ -171,7 +171,7 @@ const theme = useTheme()
           </v-card-actions>
         </v-card>
       </v-col>
-      <v-col class="text-justify d-flex" cols="12" md="6" lg="3" style="flex-direction: : column;">
+      <v-col class="text-justify d-flex" cols="12" sm="6" lg="3" style="flex-direction: : column;">
         <v-card class="pa-6">
           <v-card-title class="text-h6 text-md-h4 text-primary font-weight-black">
             Contact

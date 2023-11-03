@@ -25,7 +25,7 @@ let data = ref({
       <template v-slot:prepend>
         <v-app-bar-nav-icon
           @click.stop="data.drawer = !data.drawer"
-          class="d-sm-none"
+          class="d-md-none"
           rounded="lg"
         />
       </template>
@@ -34,7 +34,7 @@ let data = ref({
         >Juan Gustavo Rueda Escobedo</v-app-bar-title
       >
 
-      <div class="d-none d-sm-flex text-primary">
+      <div class="d-none d-md-flex text-primary">
         <v-btn to="/" variant="text" class="text-none text-subtitle-1 font-weight-bold">Home</v-btn>
         <v-btn to="/publications" variant="text" class="text-none text-subtitle-1 font-weight-bold"
           >Publications</v-btn
@@ -49,7 +49,7 @@ let data = ref({
       <v-btn icon="mdi-theme-light-dark" @click="toggleTheme" size="small"></v-btn>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="data.drawer" class="d-sm-none" temporary>
+    <v-navigation-drawer v-model="data.drawer" class="d-md-none" temporary>
       <v-list-item title="Site" subtitle="Navegation"></v-list-item>
       <v-divider></v-divider>
       <v-list-item to="/" title="Home"></v-list-item>
