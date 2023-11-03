@@ -30,15 +30,21 @@ let data = ref({
         />
       </template>
 
-      <v-app-bar-title class="font-weight-black text-primary">Juan Gustavo Rueda Escobedo</v-app-bar-title>
+      <v-app-bar-title class="font-weight-black text-primary"
+        >Juan Gustavo Rueda Escobedo</v-app-bar-title
+      >
 
       <div class="d-none d-sm-flex text-primary">
         <v-btn to="/" variant="text" class="text-none text-subtitle-1 font-weight-bold">Home</v-btn>
         <v-btn to="/publications" variant="text" class="text-none text-subtitle-1 font-weight-bold"
           >Publications</v-btn
         >
-        <v-btn to="/about" variant="text" class="text-none text-subtitle-1 font-weight-bold">About</v-btn>
-        <v-btn to="/contact" variant="text" class="text-none text-subtitle-1 font-weight-bold">Contact</v-btn>
+        <v-btn to="/about" variant="text" class="text-none text-subtitle-1 font-weight-bold"
+          >About</v-btn
+        >
+        <v-btn to="/contact" variant="text" class="text-none text-subtitle-1 font-weight-bold"
+          >Contact</v-btn
+        >
       </div>
       <v-btn icon="mdi-theme-light-dark" @click="toggleTheme" size="small"></v-btn>
     </v-app-bar>
@@ -73,10 +79,11 @@ let data = ref({
 
 .dark-main {
   background-repeat: repeat;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/texture_400x400.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('/texture_400x400.jpg');
 }
 
-.container{
+.container {
   background: var(--var-theme-primary);
   max-width: 1440px;
   min-width: 300px;
