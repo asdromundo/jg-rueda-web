@@ -3,6 +3,26 @@ import { VCol } from 'vuetify/components'
 </script>
 
 <template>
+  <v-col class="pa-0">
+    <v-card class="w-100">
+      <v-img src="/banner_long.jpg">
+        <v-card-title 
+          class="text-primary font-weight-black text-h6 text-md-h3 pa-10 align-center"
+          style="overflow-wrap: anywhere; white-space: normal; max-width: 45%; line-height: 3.5rem"
+          >
+          Department on Automatic Control
+        </v-card-title>
+        <v-card-subtitle
+        class="ml-10 font-weight-black text-h6"
+        style="overflow-wrap: anywhere; white-space: normal; max-width: 30%;"
+        >
+          <i>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</i>
+          <p>"No hay nadie que ame el dolor mismo, que lo busque, lo encuentre y lo quiera, simplemente porque es el dolor."</p>
+        </v-card-subtitle>
+        <v-btn class="text-none text-subtitle-1 ml-10 mt-4" size="x-large" color="error">Welcome</v-btn>
+      </v-img>
+    </v-card>
+  </v-col>
   <div>
     <v-card class="pa-10 primary-container">
       <v-responsive :aspect-ratio="16 / 9">
@@ -37,6 +57,8 @@ import { VCol } from 'vuetify/components'
   color: rgb(var(--v-theme-on-secondary-container));
   outline-color: rgb(var(--v-theme-outlined));
 }
+
+
 </style>
 <!--  .secondary-container{
   background: rgb(var(--v-theme-secondary-container));

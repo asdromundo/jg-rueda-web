@@ -48,7 +48,7 @@ let data = ref({
     </v-navigation-drawer>
 
     <v-main class="align-center justify-center h-100 main">
-      <v-container class="max-width">
+      <v-container class="container">
         <RouterView />
       </v-container>
     </v-main>
@@ -66,7 +66,8 @@ let data = ref({
   background-repeat: repeat;
 }
 
-.max-width {
+.main .container{
   max-width: 1440px;
+  min-width: 300px;
 }
 </style>
